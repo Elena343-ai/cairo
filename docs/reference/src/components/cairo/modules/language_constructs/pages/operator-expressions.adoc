@@ -77,16 +77,6 @@ Write them as explicit conjunctions or parenthesized boolean comparisons, for ex
 `a < b && b < c`, `a == b && b == c`, or `(a < b) == expected`.
 The parser reports this as `E1028` (consecutive comparison operators).
 
-Mixed consecutive comparison/equality operators are also not supported, for example
-`a < b == c` or `a == b < c`.
-Make the intent explicit with conjunctions or parentheses:
-
-[source,cairo]
-----
-let in_range_and_equal = a < b && b == c;
-let bool_comparison = (a < b) == expected;
-----
-
 == Implementing operators for custom types
 
 Most operators in Cairo are trait-driven and can be overloaded for custom types by implementing
